@@ -1,0 +1,318 @@
+[
+  {
+    "id": "hair_spa",
+    "name": "Hair Spa",
+    "category": "Hair Repair",
+    "price_range": "Rs. 1,000 - Rs. 2,200",
+    "duration": "60-90 mins",
+    "description": "Deep-conditioning ritual that repairs dryness, nourishes the scalp, and restores softness for dull and stressed hair.",
+    "benefits": [
+      "Reduces frizz and rough texture.",
+      "Improves scalp moisture balance.",
+      "Adds shine and smoothness."
+    ],
+    "process": [
+      "Hair and scalp analysis.",
+      "Cleansing wash with mild shampoo.",
+      "Nourishing cream mask with steam.",
+      "Relaxing scalp massage and rinse.",
+      "Serum application and soft styling."
+    ]
+  },
+  {
+    "id": "signature_facial",
+    "name": "Signature Facial",
+    "category": "Skin Care",
+    "price_range": "Rs. 1,200 - Rs. 2,500",
+    "duration": "50-75 mins",
+    "description": "Brightening facial with exfoliation and hydration to refresh tired skin and reveal a clean natural glow.",
+    "benefits": [
+      "Deep-cleans pores and removes buildup.",
+      "Improves skin texture and glow.",
+      "Supports healthier moisture retention."
+    ],
+    "process": [
+      "Skin analysis and cleansing.",
+      "Exfoliation and steam treatment.",
+      "Targeted extraction where needed.",
+      "Facial massage with active serum.",
+      "Mask, toner, and protective finish."
+    ]
+  },
+  {
+    "id": "bridal_makeup",
+    "name": "Bridal Makeup",
+    "category": "Bridal",
+    "price_range": "Rs. 8,000 - Rs. 20,000",
+    "duration": "150-210 mins",
+    "description": "HD bridal package with detailed complexion work, eye artistry, and durable finishing for long ceremony hours.",
+    "benefits": [
+      "Long-lasting event-ready finish.",
+      "Photo and video friendly base.",
+      "Look customized to outfit and jewelry."
+    ],
+    "process": [
+      "Consultation and look planning.",
+      "Skin prep and base correction.",
+      "Eye makeup detailing and lash setting.",
+      "Contour, blush, and lip design.",
+      "Fixing spray and final touch-up."
+    ]
+  },
+  {
+    "id": "classic_manicure",
+    "name": "Classic Manicure",
+    "category": "Nails",
+    "price_range": "Rs. 500 - Rs. 1,500",
+    "duration": "40-55 mins",
+    "description": "Complete hand grooming session that improves nail neatness, cuticle health, and overall hand appearance.",
+    "benefits": [
+      "Keeps nails clean and well-shaped.",
+      "Softens hands and cuticles.",
+      "Improves hygiene and polish finish."
+    ],
+    "process": [
+      "Sanitization and hand soak.",
+      "Nail trim, filing, and shaping.",
+      "Cuticle care and gentle scrub.",
+      "Hydrating hand massage.",
+      "Polish or buff finish."
+    ]
+  },
+  {
+    "id": "detan_treatment",
+    "name": "De-Tan Treatment",
+    "category": "Skin Detox",
+    "price_range": "Rs. 900 - Rs. 1,800",
+    "duration": "35-50 mins",
+    "description": "Gentle tan-removal treatment designed to refresh uneven skin tone caused by sun exposure and pollution.",
+    "benefits": [
+      "Visibly improves dull complexion.",
+      "Helps reduce patchy tanning.",
+      "Leaves skin fresh and calm."
+    ],
+    "process": [
+      "Skin cleansing and prep.",
+      "De-tan pack application.",
+      "Mild massage and absorption.",
+      "Cooling mask and wipe-off.",
+      "Hydration with UV-protect layer."
+    ]
+  },
+  {
+    "id": "haircut_styling",
+    "name": "Haircut & Styling",
+    "category": "Hair Styling",
+    "price_range": "Rs. 700 - Rs. 2,000",
+    "duration": "45-80 mins",
+    "description": "Precision haircut and style finish tailored to face shape, hair texture, and daily maintenance needs.",
+    "benefits": [
+      "Structured haircut for better shape.",
+      "Personalized style consultation.",
+      "Easy day-to-day manageability."
+    ],
+    "process": [
+      "Hair texture and face-shape assessment.",
+      "Sectioning and precision cutting.",
+      "Refining layers and edge cleanup.",
+      "Blow-dry and style finishing.",
+      "Home-care guidance."
+    ]
+  },
+  {
+    "id": "engagement_makeup",
+    "name": "Engagement Makeup",
+    "category": "Bridal Event",
+    "price_range": "Rs. 4,000 - Rs. 10,000",
+    "duration": "90-140 mins",
+    "description": "Elegant event makeup with balanced glam suitable for engagement ceremonies and stage lighting.",
+    "benefits": [
+      "Natural-to-glam customization.",
+      "Long-wear comfortable finish.",
+      "Enhances features without heaviness."
+    ],
+    "process": [
+      "Look planning and shade matching.",
+      "Skin prep and base layering.",
+      "Eye, brow, and lash detailing.",
+      "Lip and contour balancing.",
+      "Fixing spray and final check."
+    ]
+  },
+  {
+    "id": "gel_nail_extensions",
+    "name": "Gel Nail Extensions",
+    "category": "Nail Art",
+    "price_range": "Rs. 1,500 - Rs. 3,500",
+    "duration": "70-110 mins",
+    "description": "Durable gel extensions with shape customization and smooth finish for stylish long-wear nails.",
+    "benefits": [
+      "Adds length with natural look.",
+      "Chip-resistant durable result.",
+      "Supports custom nail art options."
+    ],
+    "process": [
+      "Nail prep and cuticle cleanup.",
+      "Tip/form placement and shaping.",
+      "Gel layering and curing.",
+      "Surface smoothing and buffing.",
+      "Color or art finish with top coat."
+    ]
+  },
+  {
+    "id": "keratin_smoothing",
+    "name": "Keratin Smoothing",
+    "category": "Hair Treatment",
+    "price_range": "Rs. 3,500 - Rs. 8,500",
+    "duration": "120-180 mins",
+    "description": "Frizz-control treatment that smooths hair fiber and gives a polished, sleek look for several weeks.",
+    "benefits": [
+      "Controls volume and frizz.",
+      "Improves shine and softness.",
+      "Reduces daily styling time."
+    ],
+    "process": [
+      "Clarifying wash and dry prep.",
+      "Section-wise keratin application.",
+      "Controlled heat sealing.",
+      "Final rinse and conditioning.",
+      "Post-care instructions."
+    ]
+  },
+  {
+    "id": "global_hair_color",
+    "name": "Global Hair Color",
+    "category": "Hair Color",
+    "price_range": "Rs. 2,500 - Rs. 6,500",
+    "duration": "90-150 mins",
+    "description": "Full-coverage hair color with shade consultation and finishing care to maintain vibrancy and shine.",
+    "benefits": [
+      "Even all-over color coverage.",
+      "Customized tone selection.",
+      "Glossy salon-finish results."
+    ],
+    "process": [
+      "Consultation and strand assessment.",
+      "Color mixing and sectioning.",
+      "Application and processing time.",
+      "Rinse and color-lock treatment.",
+      "Blow-dry and tone check."
+    ]
+  },
+  {
+    "id": "fruit_cleanup",
+    "name": "Fruit Cleanup",
+    "category": "Skin Refresh",
+    "price_range": "Rs. 700 - Rs. 1,400",
+    "duration": "30-45 mins",
+    "description": "Quick refreshing cleanup using fruit actives to remove surface impurities and improve skin freshness.",
+    "benefits": [
+      "Ideal for regular maintenance.",
+      "Instant clean and fresh feel.",
+      "Adds mild natural brightness."
+    ],
+    "process": [
+      "Cleansing and gentle exfoliation.",
+      "Fruit cream massage.",
+      "Cooling gel application.",
+      "Mask and hydration finish."
+    ]
+  },
+  {
+    "id": "hydration_facial",
+    "name": "Hydration Facial",
+    "category": "Skin Hydration",
+    "price_range": "Rs. 1,500 - Rs. 3,000",
+    "duration": "55-80 mins",
+    "description": "Moisture-rich facial designed for dry or dehydrated skin to improve softness, comfort, and glow.",
+    "benefits": [
+      "Boosts skin hydration levels.",
+      "Reduces dryness and tightness.",
+      "Enhances smooth, supple texture."
+    ],
+    "process": [
+      "Cleansing and hydration prep.",
+      "Moisture serum infusion massage.",
+      "Hydra mask and soothing treatment.",
+      "Barrier cream and sunscreen finish."
+    ]
+  },
+  {
+    "id": "pre_bridal_package",
+    "name": "Pre-Bridal Package",
+    "category": "Bridal Prep",
+    "price_range": "Rs. 10,000 - Rs. 28,000",
+    "duration": "Multi-session (3-6 visits)",
+    "description": "Structured pre-bridal plan combining skin, hair, and grooming services to prepare for wedding events.",
+    "benefits": [
+      "Planned beauty timeline before wedding.",
+      "Consistent skin and hair improvement.",
+      "Stress-free final day preparation."
+    ],
+    "process": [
+      "Initial consultation and schedule creation.",
+      "Skin cleanup/facial sessions.",
+      "Hair spa and grooming appointments.",
+      "Final bridal trial and touch-up planning."
+    ]
+  },
+  {
+    "id": "reception_makeup",
+    "name": "Reception Makeup",
+    "category": "Bridal Glam",
+    "price_range": "Rs. 7,000 - Rs. 16,000",
+    "duration": "110-170 mins",
+    "description": "Evening glam makeup crafted for reception lighting with elegant depth and long-lasting wear.",
+    "benefits": [
+      "High-impact evening look.",
+      "Transfer-resistant polished finish.",
+      "Balanced glam for photos and video."
+    ],
+    "process": [
+      "Look moodboard and outfit matching.",
+      "Base prep and coverage correction.",
+      "Eye drama and lash detailing.",
+      "Contour, highlight, and lip finish.",
+      "Final lock and accessory blending."
+    ]
+  },
+  {
+    "id": "spa_pedicure",
+    "name": "Spa Pedicure",
+    "category": "Foot Care",
+    "price_range": "Rs. 900 - Rs. 2,000",
+    "duration": "50-70 mins",
+    "description": "Deep cleansing foot therapy with exfoliation and massage for smooth feet and better hygiene.",
+    "benefits": [
+      "Softens cracked heel areas.",
+      "Improves foot hygiene.",
+      "Relaxes tired feet and ankles."
+    ],
+    "process": [
+      "Foot soak and sanitization.",
+      "Nail shaping and cuticle cleanup.",
+      "Scrub, callus care, and smoothing.",
+      "Foot massage and cream seal.",
+      "Polish or buff finish."
+    ]
+  },
+  {
+    "id": "gel_polish",
+    "name": "Gel Polish",
+    "category": "Nails",
+    "price_range": "Rs. 800 - Rs. 1,800",
+    "duration": "35-50 mins",
+    "description": "Long-lasting gel color application with glossy finish and chip resistance for everyday elegance.",
+    "benefits": [
+      "Extended wear compared to regular polish.",
+      "High-shine finish for weeks.",
+      "Quick drying through curing process."
+    ],
+    "process": [
+      "Nail prep and light buffing.",
+      "Base coat cure.",
+      "Color coat layering and curing.",
+      "Top coat seal and final cleanup."
+    ]
+  }
+]
