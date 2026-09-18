@@ -1,0 +1,24 @@
+{
+  "name": "riyaa-bridal-makeover-mern",
+  "version": "1.0.0",
+  "description": "Full-stack MERN Application for Riyaa Bridal Makeover (College PBL Project)",
+  "scripts": {
+    "server": "npm --prefix server start",
+    "server:dev": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "client:build": "npm --prefix client run build",
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "start": "node server/server.js"
+  },
+  "keywords": [
+    "mern",
+    "react",
+    "express",
+    "mongodb",
+    "mongoose",
+    "appointment-management",
+    "pbl"
+  ],
+  "author": "",
+  "license": "ISC"
+}

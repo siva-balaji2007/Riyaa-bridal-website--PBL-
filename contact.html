@@ -38,18 +38,73 @@
       <section class="contact-layout">
         <div class="contact-form-wrap card reveal">
           <h2>Book An Appointment</h2>
-          <!-- UI-only form; no backend processing -->
-          <form class="contact-form" action="#" method="post">
-            <label for="name">Name</label>
+          <div id="booking-alert" style="display: none; padding: 0.8rem 1rem; border-radius: 0.7rem; margin-top: 0.8rem; font-size: 0.9rem;"></div>
+          
+          <div id="booking-success" style="display: none; text-align: center; padding: 1.5rem 0.5rem;">
+            <div style="width: 50px; height: 50px; background: #d1fae5; color: #059669; border-radius: 50%; display: grid; place-items: center; margin: 0 auto 1rem; font-size: 1.5rem;">✓</div>
+            <h3>Appointment Confirmed!</h3>
+            <p style="color: var(--muted); margin-top: 0.4rem;">Thank you! Your appointment has been permanently saved in our database.</p>
+            <p style="margin: 1rem 0;"><span id="success-apt-id" style="background: var(--surface-soft); color: var(--primary-dark); font-weight: 700; padding: 0.4rem 1rem; border-radius: 999px; border: 1px solid var(--line);">ID: APT-XXXX</span></p>
+            <div id="success-details" style="background: #fff; border: 1px solid var(--line); border-radius: 0.8rem; padding: 1rem; text-align: left; font-size: 0.9rem; margin-bottom: 1.2rem;"></div>
+            <button type="button" id="book-another-btn" class="btn btn-secondary">Book Another Appointment</button>
+          </div>
+
+          <form id="appointment-form" class="contact-form" action="#" method="post">
+            <label for="name">Full Name *</label>
             <input id="name" name="name" type="text" placeholder="Your full name" required>
 
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+              <div>
+                <label for="phone">Phone Number *</label>
+                <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" required>
+              </div>
+              <div>
+                <label for="email">Email Address *</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required>
+              </div>
+            </div>
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell us your service preference" required></textarea>
+            <label for="serviceId">Select Service *</label>
+            <select id="serviceId" name="serviceId" required style="width: 100%; padding: 0.75rem 0.85rem; border-radius: 0.7rem; border: 1px solid var(--line); font: inherit; background: #fff;">
+              <option value="bridal_makeup">Bridal Makeup (Bridal) — Rs. 8,000 - Rs. 20,000</option>
+              <option value="hair_spa">Hair Spa (Hair Repair) — Rs. 1,000 - Rs. 2,200</option>
+              <option value="signature_facial">Signature Facial (Skin Care) — Rs. 1,200 - Rs. 2,500</option>
+              <option value="classic_manicure">Classic Manicure (Nail Studio) — Rs. 500 - Rs. 1,500</option>
+              <option value="pre_bridal_package">Pre-Bridal Package (Bridal) — Rs. 10,000 - Rs. 28,000</option>
+              <option value="keratin_smoothing">Keratin Smoothing (Hair) — Rs. 3,500 - Rs. 8,500</option>
+            </select>
 
-            <button type="submit" class="btn btn-primary">Send Message</button>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+              <div>
+                <label for="appointmentDate">Appointment Date *</label>
+                <input id="appointmentDate" name="appointmentDate" type="date" required>
+              </div>
+              <div>
+                <label for="appointmentTime">Preferred Time *</label>
+                <select id="appointmentTime" name="appointmentTime" required style="width: 100%; padding: 0.75rem 0.85rem; border-radius: 0.7rem; border: 1px solid var(--line); font: inherit; background: #fff;">
+                  <option value="10:00 AM">10:00 AM - 11:30 AM</option>
+                  <option value="11:30 AM">11:30 AM - 01:00 PM</option>
+                  <option value="01:00 PM">01:00 PM - 02:30 PM</option>
+                  <option value="02:30 PM">02:30 PM - 04:00 PM</option>
+                  <option value="04:00 PM">04:00 PM - 05:30 PM</option>
+                  <option value="05:30 PM">05:30 PM - 07:00 PM</option>
+                  <option value="07:00 PM">07:00 PM - 08:30 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <label for="numberOfPeople">Number of People</label>
+            <select id="numberOfPeople" name="numberOfPeople" style="width: 100%; padding: 0.75rem 0.85rem; border-radius: 0.7rem; border: 1px solid var(--line); font: inherit; background: #fff;">
+              <option value="1">1 Person (Solo Makeover)</option>
+              <option value="2">2 Persons (Bride + 1)</option>
+              <option value="3">3 Persons (Bridal Party)</option>
+              <option value="4">4+ Persons (Group Package)</option>
+            </select>
+
+            <label for="notes">Special Requirements / Notes (Optional)</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Tell us your preferences, skin sensitivities, or event timing..."></textarea>
+
+            <button type="submit" id="submit-btn" class="btn btn-primary" style="margin-top: 0.5rem;">Confirm & Book Appointment</button>
           </form>
         </div>
 
@@ -93,5 +148,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="js/booking.js"></script>
 </body>
 </html>

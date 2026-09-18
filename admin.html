@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riyaa Bridal Makeover | Beautician Admin Portal</title>
+  <meta name="description" content="Beautician and Administrator Appointment Management for Riyaa Bridal Makeover.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .status-badge { display: inline-flex; align-items: center; padding: 0.25rem 0.7rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; }
+    .status-badge.Pending { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+    .status-badge.Confirmed { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+    .status-badge.Completed { background: #d1fae5; color: #047857; border: 1px solid #a7f3d0; }
+    .status-badge.Cancelled { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+    .admin-stats-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; margin-bottom: 1.8rem; }
+    .stat-card { background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; padding: 1.2rem; cursor: pointer; transition: all 0.25s ease; }
+    .stat-card:hover, .stat-card.active { border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 8px 18px rgba(215, 124, 158, 0.15); }
+    .stat-title { font-size: 0.78rem; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .stat-number { font-size: 1.8rem; font-weight: 700; color: var(--primary-dark); font-family: 'Playfair Display', serif; margin-top: 0.3rem; }
+    .admin-toolbar { background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; padding: 1rem 1.2rem; margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+    .admin-table { width: 100%; border-collapse: collapse; text-align: left; }
+    .admin-table th { background: var(--surface-soft); color: var(--primary-dark); padding: 0.9rem 1rem; border-bottom: 1px solid var(--line); font-size: 0.82rem; text-transform: uppercase; }
+    .admin-table td { padding: 1rem; border-bottom: 1px solid var(--line); font-size: 0.92rem; }
+    .admin-table tr:hover td { background: rgba(255, 244, 239, 0.4); }
+    .timeline { position: relative; padding-left: 1.8rem; margin-top: 1.2rem; }
+    .timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+    .timeline-item { position: relative; margin-bottom: 1.2rem; }
+    .timeline-dot { position: absolute; left: -1.8rem; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--primary); border: 2px solid #fff; box-shadow: 0 0 0 2px var(--primary); }
+    .timeline-content { background: #fff; border: 1px solid var(--line); border-radius: 0.8rem; padding: 0.9rem 1.1rem; }
+    @media (max-width: 1024px) { .admin-stats-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 760px) { .admin-stats-grid { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+  <header class="site-header scrolled">
+    <nav class="navbar container">
+      <a class="logo" href="index.html">
+        Riyaa Bridal Makeover
+        <span style="font-size: 0.65rem; font-family: 'Poppins'; background: var(--primary-dark); color: #fff; padding: 0.15rem 0.5rem; border-radius: 999px;">ADMIN</span>
+      </a>
+      <div id="admin-user-nav" style="display: flex; align-items: center; gap: 0.8rem;">
+        <a href="index.html" class="btn btn-secondary" style="padding: 0.4rem 0.9rem; font-size: 0.85rem;">View Website</a>
+        <button id="logout-btn" class="btn btn-outline" style="padding: 0.4rem 0.9rem; font-size: 0.85rem; display: none;">Logout</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="section page-top-space">
+    <div class="container">
+      
+      <!-- Login Section -->
+      <div id="login-section" style="max-width: 440px; margin: 2rem auto;">
+        <div class="card" style="padding: 2rem;">
+          <h2 style="text-align: center;">Beautician Login</h2>
+          <p style="color: var(--muted); text-align: center; font-size: 0.9rem; margin-bottom: 1.5rem;">Access the salon appointment management system.</p>
+          <div id="login-alert" style="display: none; padding: 0.75rem 1rem; border-radius: 0.6rem; margin-bottom: 1rem; font-size: 0.88rem;"></div>
+          <form id="admin-login-form" class="contact-form" style="margin-top: 0;">
+            <label for="admin-email">Email</label>
+            <input id="admin-email" type="email" value="admin@riyaa.com" required>
+            <label for="admin-password">Password</label>
+            <input id="admin-password" type="password" value="admin123" required>
+            <button type="submit" class="btn btn-primary" style="margin-top: 0.8rem;">Sign In to Dashboard</button>
+          </form>
+          <div style="margin-top: 1.2rem; padding: 0.8rem; background: var(--surface-soft); border-radius: 0.6rem; font-size: 0.82rem;">
+            <strong>Demo Credentials:</strong><br>
+            Email: <code>admin@riyaa.com</code><br>
+            Password: <code>admin123</code>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Section -->
+      <div id="dashboard-section" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+          <div>
+            <p class="eyebrow">Salon Administration</p>
+            <h1>Appointment Dashboard</h1>
+          </div>
+          <button id="open-history-btn" class="btn btn-secondary">🔍 Search Customer History</button>
+        </div>
+
+        <div id="dash-alert" style="display: none; padding: 0.8rem 1.2rem; border-radius: 0.7rem; margin-bottom: 1.5rem;"></div>
+
+        <!-- KPI Metric Cards -->
+        <div class="admin-stats-grid">
+          <div class="stat-card" data-tab="today">
+            <div class="stat-title">Today</div>
+            <div class="stat-number" id="stat-today">0</div>
+          </div>
+          <div class="stat-card" data-tab="upcoming">
+            <div class="stat-title">Upcoming</div>
+            <div class="stat-number" id="stat-upcoming">0</div>
+          </div>
+          <div class="stat-card" data-tab="pending">
+            <div class="stat-title" style="color: #b45309;">Pending</div>
+            <div class="stat-number" id="stat-pending" style="color: #b45309;">0</div>
+          </div>
+          <div class="stat-card" data-tab="completed">
+            <div class="stat-title" style="color: #059669;">Completed</div>
+            <div class="stat-number" id="stat-completed" style="color: #059669;">0</div>
+          </div>
+          <div class="stat-card" data-tab="cancelled">
+            <div class="stat-title" style="color: #dc2626;">Cancelled</div>
+            <div class="stat-number" id="stat-cancelled" style="color: #dc2626;">0</div>
+          </div>
+          <div class="stat-card active" data-tab="all">
+            <div class="stat-title">Total Lifetime</div>
+            <div class="stat-number" id="stat-total">0</div>
+          </div>
+        </div>
+
+        <!-- Toolbar: Search and Filters -->
+        <div class="admin-toolbar">
+          <input type="text" id="dash-search" placeholder="Search by customer name, phone, email, ID..." style="flex: 1; min-width: 250px; padding: 0.6rem 1rem; border-radius: 999px; border: 1px solid var(--line); font: inherit;">
+          
+          <select id="dash-status" style="padding: 0.6rem 1rem; border-radius: 999px; border: 1px solid var(--line); font: inherit; background: #fff;">
+            <option value="All">All Statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Completed">Completed</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+
+          <input type="date" id="dash-date" style="padding: 0.6rem 1rem; border-radius: 999px; border: 1px solid var(--line); font: inherit; background: #fff;">
+
+          <button id="dash-reset" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Reset Filters</button>
+        </div>
+
+        <!-- Appointments Table -->
+        <div class="card" style="overflow-x: auto;">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Customer</th>
+                <th>Service</th>
+                <th>Date & Time</th>
+                <th>Phone</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="appointments-tbody">
+              <tr>
+                <td colspan="7" style="text-align: center; padding: 2rem; color: var(--muted);">Loading appointments from MongoDB...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Appointment Details Modal -->
+  <div id="details-modal" class="modal" aria-hidden="true">
+    <div class="modal-content" style="max-width: 600px;">
+      <span class="close-btn" id="close-details-btn">&times;</span>
+      <h2>Appointment Details</h2>
+      <div id="modal-apt-content" style="margin: 1rem 0;"></div>
+      <div class="form-group" style="margin-bottom: 1rem;">
+        <label><strong>Change Status:</strong></label>
+        <select id="modal-status-select" style="width: 100%; padding: 0.6rem; border-radius: 0.6rem; border: 1px solid var(--line); font: inherit; background: #fff;">
+          <option value="Pending">Pending</option>
+          <option value="Confirmed">Confirmed</option>
+          <option value="Completed">Completed</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-bottom: 1.5rem;">
+        <label><strong>Notes:</strong></label>
+        <textarea id="modal-notes" rows="3" style="width: 100%; padding: 0.6rem; border-radius: 0.6rem; border: 1px solid var(--line); font: inherit;"></textarea>
+      </div>
+      <button id="save-status-btn" class="btn btn-primary" style="width: 100%;">Save Changes to Database</button>
+    </div>
+  </div>
+
+  <!-- Customer History Modal -->
+  <div id="history-modal" class="modal" aria-hidden="true">
+    <div class="modal-content" style="max-width: 700px;">
+      <span class="close-btn" id="close-history-btn">&times;</span>
+      <h2>Customer History Lookup</h2>
+      <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">Search any client by Name, Phone, or Email to view past & upcoming services.</p>
+      
+      <div style="display: flex; gap: 0.6rem; margin-bottom: 1.5rem;">
+        <input type="text" id="history-query-input" placeholder="e.g. Priya or 9876500001" style="flex: 1; padding: 0.7rem 1rem; border-radius: 0.6rem; border: 1px solid var(--line); font: inherit;">
+        <button id="search-history-btn" class="btn btn-primary">Search</button>
+      </div>
+
+      <div id="history-results"></div>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+# ==============================================================================
+# Git Ignore Configuration - MERN Bridal Makeover PBL Project
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Dependencies (Root, Server, and Client)
+# ------------------------------------------------------------------------------
+node_modules/
+*/node_modules/
+client/node_modules/
+server/node_modules/
+
+# ------------------------------------------------------------------------------
+# Database & Local Binary Storage
+# (Never commit active MongoDB engine files or lockfiles)
+# ------------------------------------------------------------------------------
+data/mongo_storage/
+data/mongo_storage/**
+WiredTiger*
+*.wt
+mongod.lock
+
+# ------------------------------------------------------------------------------
+# Environment Variables & Secrets
+# (Never commit production credentials or connection strings)
+# ------------------------------------------------------------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+server/.env
+client/.env
+client/.env.local
+*.env
+
+# Retain template / example configs for documentation & setup
+!.env.example
+!server/.env.example
+!client/.env.example
+
+# ------------------------------------------------------------------------------
+# Production Build & Bundling Artifacts
+# ------------------------------------------------------------------------------
+dist/
+dist-ssr/
+client/dist/
+client/dist-ssr/
+build/
+*.local
+
+# ------------------------------------------------------------------------------
+# Logs & Diagnostic Outputs
+# ------------------------------------------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ------------------------------------------------------------------------------
+# Test Outputs, Scratchpads & Temporary Files
+# ------------------------------------------------------------------------------
+scratch/
+coverage/
+.nyc_output/
+*.tmp
+*.temp
+
+# ------------------------------------------------------------------------------
+# Operating System & IDE Specific Files
+# ------------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editors & IDEs
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
