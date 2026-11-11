@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Lock, Mail, AlertCircle, Shield, User } from 'lucide-react';
+import { AlertCircle } from 'lucide-react';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -32,12 +32,6 @@ export default function Login() {
     } finally {
       setLoading(false);
     }
-  };
-
-  const autofillDemo = (demoEmail, demoPass) => {
-    setEmail(demoEmail);
-    setPassword(demoPass);
-    setError(null);
   };
 
   return (
@@ -99,41 +93,6 @@ export default function Login() {
             </button>
           </form>
 
-          {/* College Demo Credentials Helper */}
-          <div
-            style={{
-              marginTop: '1.8rem',
-              padding: '1rem',
-              background: 'var(--surface-soft)',
-              border: '1px solid var(--line)',
-              borderRadius: '0.85rem',
-              fontSize: '0.85rem',
-            }}
-          >
-            <p style={{ fontWeight: 600, color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>
-              Quick Demo Accounts (PBL Testing):
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-              <button
-                type="button"
-                className="btn btn-secondary btn-sm"
-                style={{ justifyContent: 'flex-start', textAlign: 'left' }}
-                onClick={() => autofillDemo('admin@riyaa.com', 'admin123')}
-              >
-                <Shield size={13} />
-                <strong>Admin / Beautician:</strong> admin@riyaa.com (admin123)
-              </button>
-              <button
-                type="button"
-                className="btn btn-secondary btn-sm"
-                style={{ justifyContent: 'flex-start', textAlign: 'left' }}
-                onClick={() => autofillDemo('priya@example.com', 'priya123')}
-              >
-                <User size={13} />
-                <strong>Customer:</strong> priya@example.com (priya123)
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </main>
